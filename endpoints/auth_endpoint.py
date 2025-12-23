@@ -5,8 +5,6 @@ from data import test_data
 
 class AuthEndpoint:
 
-
-
     def get_auth_token(self):
         url = f'{test_data.url}/common/auth'
         payload = {'login': f'{test_data.login}', 'password': f'{test_data.password}'}

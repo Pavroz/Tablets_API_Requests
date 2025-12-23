@@ -17,7 +17,7 @@ class MemberEndpoint(AuthEndpoint):
             "middleName": middlename,
             "position": position,
             "county": subject,
-            "profileId": 48
+            "profileId": profileid
         }
         response = requests.post(url, json=payload, headers=headers)
         assert response.status_code == 201

@@ -23,7 +23,7 @@ class TestMember:
     ):
         response = profile_endpoint.create_new_profile()
         member_endpoint.create_member(
-            response,
+            profileid=response,
             middlename=middlename,
             subject=subject,
             position=position)
