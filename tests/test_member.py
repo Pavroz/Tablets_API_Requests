@@ -1,22 +1,11 @@
 import pytest
-
+from constants import member_cases
 
 
 class TestMember:
 
     @pytest.mark.parametrize(
-        "middlename, subject, position",
-        [
-            (None, None, None),
-            ("middlename", None, None),
-            (None, "subject", None),
-            (None, None, "position"),
-            ("middlename", "subject", None),
-            ("middlename", None, "position"),
-            (None, "subject", "position"),
-            ("middlename", "subject", "position"),
-        ]
-    )
+        "middlename, subject, position", member_cases.MEMBER_CASES)
     def test_create_member(
             self, profile_endpoint, member_endpoint,
             middlename, subject, position
