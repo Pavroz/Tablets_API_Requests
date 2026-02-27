@@ -1,6 +1,6 @@
-from data import test_data
 from endpoints.auth_endpoint import AuthEndpoint
 import requests
+from config import config
 
 class MemberEndpoint(AuthEndpoint):
 
@@ -9,7 +9,7 @@ class MemberEndpoint(AuthEndpoint):
 
     def create_member(self, profileid, middlename=None, subject=None, position=None):
         token = self.get_auth_token()
-        url = f'{test_data.url}/members'
+        url = f'{config.URL}/members'
         headers = {'Authorization': f'Bearer {token}'}
         payload = {
             "firstName": "Иван",

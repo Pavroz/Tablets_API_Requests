@@ -1,4 +1,3 @@
-from data import test_data
 import pytest
 import allure
 

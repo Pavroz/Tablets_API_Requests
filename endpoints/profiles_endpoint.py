@@ -1,8 +1,8 @@
 import requests
 import random
 import string
-from data import test_data
 from endpoints.auth_endpoint import AuthEndpoint
+from config import config
 
 
 
@@ -10,7 +10,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def get_profile_by_id(self, id_for_get):
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/{id_for_get}'
+        url = f'{config.URL}/profiles/{id_for_get}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
         assert response.status_code == 200
@@ -22,7 +22,7 @@ class ProfileEndpoint(AuthEndpoint):
         name = ''.join(random.choices(string.ascii_lowercase, k=10))
         description = ''.join(random.choices(string.ascii_lowercase, k=10))
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/{id_for_put}'
+        url = f'{config.URL}/profiles/{id_for_put}'
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.put(url, json=payload, headers=headers)
@@ -33,7 +33,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def delete_profile(self, id_for_delete):
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/{id_for_delete}'
+        url = f'{config.URL}/profiles/{id_for_delete}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.delete(url, headers=headers)
         assert response.status_code == 204
@@ -42,7 +42,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def get_all_profiles(self):
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles'
+        url = f'{config.URL}/profiles'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
         assert response.status_code == 200
@@ -54,7 +54,7 @@ class ProfileEndpoint(AuthEndpoint):
         name = ''.join(random.choices(string.ascii_lowercase, k=10))
         description = ''.join(random.choices(string.ascii_lowercase, k=10))
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles'
+        url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, json=payload, headers=headers)
@@ -66,7 +66,7 @@ class ProfileEndpoint(AuthEndpoint):
     def copy_profile(self, id_for_copy):
         new_name = ''.join(random.choices(string.ascii_lowercase, k=10))
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/{id_for_copy}/copy'
+        url = f'{config.URL}/profiles/{id_for_copy}/copy'
         params = {'name': new_name}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, params=params, headers=headers)
@@ -78,7 +78,7 @@ class ProfileEndpoint(AuthEndpoint):
     def get_active_profile(self, id_for_get):
         """Получение активного профиля"""
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/active'
+        url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
         assert response.status_code == 200
@@ -86,7 +86,7 @@ class ProfileEndpoint(AuthEndpoint):
     def activate_profile(self, id_for_set):
         """Активация профиля"""
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/active'
+        url = f'{config.URL}/profiles/active'
         params = {'id': id_for_set}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, params=params, headers=headers)
@@ -95,7 +95,7 @@ class ProfileEndpoint(AuthEndpoint):
     def deactivate_profile(self):
         """Деактивация профиля"""
         token = self.get_auth_token()
-        url = f'{test_data.url}/profiles/active'
+        url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.delete(url, headers=headers)
         assert response.status_code == 204

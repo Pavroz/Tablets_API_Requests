@@ -1,13 +1,13 @@
 import requests
-from data import test_data
+from config import config
 
 
 
 class AuthEndpoint:
 
     def get_auth_token(self):
-        url = f'{test_data.url}/common/auth'
-        payload = {'login': f'{test_data.login}', 'password': f'{test_data.password}'}
+        url = f'{config.URL}/common/auth'
+        payload = {'login': f'{config.LOGIN}', 'password': f'{config.PASSWORD}'}
         response = requests.post(url, json=payload)
         response.raise_for_status() # Проверка, что ответ успешен
         assert isinstance(response.text, str) # Проверка, что ответ - строка
@@ -17,7 +17,7 @@ class AuthEndpoint:
 
     def auth_empty_login_and_password(self):
         """Авторизация с пустыми полями"""
-        url = f'{test_data.url}/common/auth'
+        url = f'{config.URL}/common/auth'
         payload = {'login': ' ', 'password': ' '}
         response = requests.post(url, json=payload)
         violations = response.json()['violations']
@@ -30,8 +30,8 @@ class AuthEndpoint:
 
     def auth_empty_login(self):
         """Авторизация с некорректным логином"""
-        url = f'{test_data.url}/common/auth'
-        payload = {'login': ' ', 'password': test_data.password}
+        url = f'{config.URL}/common/auth'
+        payload = {'login': ' ', 'password': config.PASSWORD}
         response = requests.post(url, json=payload)
         violations = response.json()['violations']
         for v in violations:
@@ -41,8 +41,8 @@ class AuthEndpoint:
         return response.json()
 
     def auth_empty_password(self):
-        url = f'{test_data.url}/common/auth'
-        payload = {'login': f'{test_data.login}', 'password': ' '}
+        url = f'{config.URL}/common/auth'
+        payload = {'login': f'{config.LOGIN}', 'password': ' '}
         response = requests.post(url, json=payload)
         violations = response.json()['violations']
         for v in violations:
@@ -53,7 +53,7 @@ class AuthEndpoint:
 
     def auth_incorrect_login_and_password(self):
         login = 'qwe'
-        url = f'{test_data.url}/common/auth'
+        url = f'{config.URL}/common/auth'
         payload = {'login': login, 'password': 'qwe'}
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{login}' не найден"
@@ -63,8 +63,8 @@ class AuthEndpoint:
 
     def auth_incorrect_login(self):
         login = 'qwe'
-        url = f'{test_data.url}/common/auth'
-        payload = {'login': login, 'password': test_data.password}
+        url = f'{config.URL}/common/auth'
+        payload = {'login': login, 'password': config.PASSWORD}
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{login}' не найден"
         assert isinstance(response.json(), dict)
@@ -72,8 +72,8 @@ class AuthEndpoint:
         return response.json()
 
     def auth_incorrect_password(self):
-        url = f'{test_data.url}/common/auth'
-        payload = {'login': test_data.login, 'password': 'qwe'}
+        url = f'{config.URL}/common/auth'
+        payload = {'login': config.LOGIN, 'password': 'qwe'}
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == "Неверные учетные данные"
         assert isinstance(response.json(), dict)
