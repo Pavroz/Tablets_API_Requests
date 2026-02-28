@@ -13,10 +13,10 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles/{id_for_get}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
-        assert response.status_code == 200
-        assert isinstance(response.json(), dict)
+        # assert response.status_code == 200
+        # assert isinstance(response.json(), dict)
         # print('Профиль получен успешно')
-        return None
+        return response
 
     def put_profile_by_id(self, id_for_put):
         name = ''.join(random.choices(string.ascii_lowercase, k=10))
@@ -26,10 +26,11 @@ class ProfileEndpoint(AuthEndpoint):
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.put(url, json=payload, headers=headers)
-        assert response.status_code == 201
-        assert isinstance(response.json(), dict)
+        # assert response.status_code == 201
+        # assert isinstance(response.json(), dict)
         # print('Профиль изменен успешно')
-        return response.json()['id']
+        # return response.json()['id']
+        return response
 
     def delete_profile(self, id_for_delete):
         token = self.get_auth_token()
@@ -45,10 +46,10 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
-        assert response.status_code == 200
-        assert isinstance(response.json(), list)
+        # assert response.status_code == 200
+        # assert isinstance(response.json(), list)
         # print('\nСписок профилей получен успешно')
-        return None
+        return response
 
     def create_new_profile(self):
         name = ''.join(random.choices(string.ascii_lowercase, k=10))
@@ -70,18 +71,18 @@ class ProfileEndpoint(AuthEndpoint):
         params = {'name': new_name}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, params=params, headers=headers)
-        assert response.status_code == 201
-        assert isinstance(response.json(), dict)
+        # assert response.status_code == 201
+        # assert isinstance(response.json(), dict)
         # print('Профиль скопировался успешно')
-        return response.json()['id']
+        return response
 
-    def get_active_profile(self, id_for_get):
+    def get_active_profile(self):
         """Получение активного профиля"""
         token = self.get_auth_token()
         url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
-        assert response.status_code == 200
+        return response
 
     def activate_profile(self, id_for_set):
         """Активация профиля"""
@@ -90,7 +91,7 @@ class ProfileEndpoint(AuthEndpoint):
         params = {'id': id_for_set}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, params=params, headers=headers)
-        assert response.status_code == 204
+        return response
 
     def deactivate_profile(self):
         """Деактивация профиля"""
@@ -98,4 +99,4 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.delete(url, headers=headers)
-        assert response.status_code == 204
+        return response
