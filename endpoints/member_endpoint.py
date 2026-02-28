@@ -1,13 +1,15 @@
 from endpoints.auth_endpoint import AuthEndpoint
 import requests
 from config import config
+import random
+import string
 
 class MemberEndpoint(AuthEndpoint):
 
-    def put_member(self):
-        pass
+    def _random_string(self):
+        return ''.join(random.choices(string.ascii_lowercase, k=10))
 
-    def create_member(self, profileid, middlename=None, subject=None, position=None):
+    def create_member(self, id_profile, middlename=None, subject=None, position=None):
         token = self.get_auth_token()
         url = f'{config.URL}/members'
         headers = {'Authorization': f'Bearer {token}'}
@@ -17,7 +19,7 @@ class MemberEndpoint(AuthEndpoint):
             "middleName": middlename,
             "position": position,
             "county": subject,
-            "profileId": profileid
+            "profileId": id_profile
         }
         response = requests.post(url, json=payload, headers=headers)
         return response
@@ -31,7 +33,21 @@ class MemberEndpoint(AuthEndpoint):
         return response
 
 
-
+    def put_member(self, id_profile, id_member, firstname, lastname, middlename=None, position=None, subject=None):
+        token = self.get_auth_token()
+        url = f'{config.URL}/members'
+        headers = {'Authorization': f'Bearer {token}'}
+        payload = {
+            'id': id_member,
+            'firstName': firstname,
+            'lastName': lastname,
+            'middleName': middlename,
+            'position': position,
+            'county': subject,
+            'profileId': id_profile
+        }
+        response = requests.put(url, json=payload, headers=headers)
+        return response
 
 
 
