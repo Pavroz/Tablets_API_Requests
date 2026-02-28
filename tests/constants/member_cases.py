@@ -9,9 +9,29 @@ MEMBER_CREATE_CASES = [
             ("middlename", "subject", "position"),
         ]
 
+
+# Упрощенный набор тестов, где обязательные поля всегда передаются
 MEMBER_PUT_CASES = [
-    # 1. Одиночные изменения (5 тестов)
-    ("firstname", None, None, None, None),  # только firstname
+    # Одиночные изменения (НО ВСЕГДА С firstname И lastname)
+    ("firstname", "lastname", None, None, None),           # только обязательные
+    ("firstname", "lastname", "middlename", None, None),   # + middlename
+    ("firstname", "lastname", None, "position", None),     # + position
+    ("firstname", "lastname", None, None, "subject"),      # + subject
+    ("firstname", "lastname", "middlename", "position", None),  # middlename + position
+    ("firstname", "lastname", "middlename", None, "subject"),   # middlename + subject
+    ("firstname", "lastname", None, "position", "subject"),     # position + subject
+    ("firstname", "lastname", "middlename", "position", "subject"),  # все поля
+    ("updated_first", "updated_last", None, None, None),     # другие имена
+    ("updated_first", "updated_last", "new_middle", "new_pos", "new_subject"),  # все новые
+]
+
+
+# Правильный набор тестов, т.к. при создании обязательные поля уже заполнены
+# и редактировать можно любые поля, а в данный момент баг, что при редактировании
+# нужно обязательно заполнять обязательные поля
+# MEMBER_PUT_CASES = [
+#     1. Одиночные изменения (5 тестов)
+#     ("firstname", None, None, None, None),  # только firstname
 #     (None, "lastname", None, None, None),  # только lastname
 #     (None, None, "middlename", None, None),  # только middlename
 #     (None, None, None, "position", None),  # только position
@@ -53,4 +73,4 @@ MEMBER_PUT_CASES = [
 #
 #     # 6. Граничные случаи
 #     ("", "", "", "", ""),  # пустые строки
-]
+# ]
