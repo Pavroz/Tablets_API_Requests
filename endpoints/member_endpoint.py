@@ -20,9 +20,7 @@ class MemberEndpoint(AuthEndpoint):
             "profileId": profileid
         }
         response = requests.post(url, json=payload, headers=headers)
-        assert response.status_code == 201
-        assert isinstance(response.json(), dict)
-        return response.json()['id']
+        return response
 
 
 

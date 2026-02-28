@@ -8,6 +8,14 @@ from config import config
 
 class ProfileEndpoint(AuthEndpoint):
 
+    def _generate_profile_name(self, prefix='test_', length=20):
+        suffix = ''.join(random.choice(string.ascii_lowercase + string.digits)
+                         for _ in range(length - len(prefix)))
+        return f'{prefix}{suffix}'
+
+    def _random_string(self):
+        return ''.join(random.choices(string.ascii_lowercase, k=10))
+
     def get_profile_by_id(self, id_for_get):
         token = self.get_auth_token()
         url = f'{config.URL}/profiles/{id_for_get}'
@@ -19,8 +27,8 @@ class ProfileEndpoint(AuthEndpoint):
         return response
 
     def put_profile_by_id(self, id_for_put):
-        name = ''.join(random.choices(string.ascii_lowercase, k=10))
-        description = ''.join(random.choices(string.ascii_lowercase, k=10))
+        name = self._generate_profile_name()
+        description = self._random_string
         token = self.get_auth_token()
         url = f'{config.URL}/profiles/{id_for_put}'
         payload = {'name': name, 'description': description}
@@ -52,8 +60,8 @@ class ProfileEndpoint(AuthEndpoint):
         return response
 
     def create_new_profile(self):
-        name = ''.join(random.choices(string.ascii_lowercase, k=10))
-        description = ''.join(random.choices(string.ascii_lowercase, k=10))
+        name = self._generate_profile_name()
+        description = self._random_string
         token = self.get_auth_token()
         url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}
@@ -65,7 +73,7 @@ class ProfileEndpoint(AuthEndpoint):
         return response.json()['id']
 
     def copy_profile(self, id_for_copy):
-        new_name = ''.join(random.choices(string.ascii_lowercase, k=10))
+        new_name = self._generate_profile_name()
         token = self.get_auth_token()
         url = f'{config.URL}/profiles/{id_for_copy}/copy'
         params = {'name': new_name}
