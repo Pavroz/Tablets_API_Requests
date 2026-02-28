@@ -28,7 +28,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def put_profile_by_id(self, id_for_put):
         name = self._generate_profile_name()
-        description = self._random_string
+        description = self._random_string()
         token = self.get_auth_token()
         url = f'{config.URL}/profiles/{id_for_put}'
         payload = {'name': name, 'description': description}
@@ -61,7 +61,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def create_new_profile(self):
         name = self._generate_profile_name()
-        description = self._random_string
+        description = self._random_string()
         token = self.get_auth_token()
         url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}

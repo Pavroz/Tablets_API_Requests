@@ -23,6 +23,12 @@ class MemberEndpoint(AuthEndpoint):
         return response
 
 
+    def get_member(self, id_member):
+        token = self.get_auth_token()
+        url = f'{config.URL}/members/{id_member}'
+        headers = {'Authorization': f'Bearer {token}'}
+        response = requests.get(url, headers=headers)
+        return response
 
 
 
