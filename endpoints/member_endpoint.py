@@ -14,7 +14,13 @@ class MemberEndpoint(AuthEndpoint):
     def _random_string():
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
-    def create_member(self, id_profile: str, middlename: str=None, subject: str=None, position: str=None) -> Response:
+    def create_member(
+            self,
+            id_profile: str,
+            middlename: str=None,
+            subject: str=None,
+            position: str=None
+    ) -> Response:
         url = f'{config.URL}/members'
         payload = {
             "firstName": "Иван",
