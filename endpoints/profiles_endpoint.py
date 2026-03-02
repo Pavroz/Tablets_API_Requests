@@ -3,6 +3,7 @@ import random
 import string
 from endpoints.auth_endpoint import AuthEndpoint
 from config import config
+from requests import Response
 
 
 
@@ -19,7 +20,7 @@ class ProfileEndpoint(AuthEndpoint):
     def _random_string(self):
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
-    def get_profile_by_id(self, id_for_get):
+    def get_profile_by_id(self, id_for_get: str) -> Response:
         url = f'{config.URL}/profiles/{id_for_get}'
         response = requests.get(url, headers=self.headers)
         # assert response.status_code == 200
@@ -27,7 +28,7 @@ class ProfileEndpoint(AuthEndpoint):
         # print('Профиль получен успешно')
         return response
 
-    def put_profile_by_id(self, id_for_put):
+    def put_profile_by_id(self, id_for_put: str) -> Response:
         name = self._generate_profile_name()
         description = self._random_string()
         url = f'{config.URL}/profiles/{id_for_put}'
@@ -39,14 +40,14 @@ class ProfileEndpoint(AuthEndpoint):
         # return response.json()['id']
         return response
 
-    def delete_profile(self, id_for_delete):
+    def delete_profile(self, id_for_delete: str) -> Response:
         url = f'{config.URL}/profiles/{id_for_delete}'
         response = requests.delete(url, headers=self.headers)
         assert response.status_code == 204
         # print('Профиль удалился успешно')
         return response
 
-    def get_all_profiles(self):
+    def get_all_profiles(self) -> Response:
         url = f'{config.URL}/profiles'
         response = requests.get(url, headers=self.headers)
         # assert response.status_code == 200
@@ -54,15 +55,16 @@ class ProfileEndpoint(AuthEndpoint):
         # print('\nСписок профилей получен успешно')
         return response
 
-    def create_new_profile(self):
+    def create_new_profile(self) -> Response:
         name = self._generate_profile_name()
         description = self._random_string()
         url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}
         response = requests.post(url, json=payload, headers=self.headers)
+        print(response)
         return response
 
-    def copy_profile(self, id_for_copy):
+    def copy_profile(self, id_for_copy: str) -> Response:
         new_name = self._generate_profile_name()
         url = f'{config.URL}/profiles/{id_for_copy}/copy'
         params = {'name': new_name}
@@ -72,20 +74,20 @@ class ProfileEndpoint(AuthEndpoint):
         # print('Профиль скопировался успешно')
         return response
 
-    def get_active_profile(self):
+    def get_active_profile(self) -> Response:
         """Получение активного профиля"""
         url = f'{config.URL}/profiles/active'
         response = requests.get(url, headers=self.headers)
         return response
 
-    def activate_profile(self, id_for_set):
+    def activate_profile(self, id_for_set: str) -> Response:
         """Активация профиля"""
         url = f'{config.URL}/profiles/active'
         params = {'id': id_for_set}
         response = requests.post(url, params=params, headers=self.headers)
         return response
 
-    def deactivate_profile(self):
+    def deactivate_profile(self) -> Response:
         """Деактивация профиля"""
         url = f'{config.URL}/profiles/active'
         response = requests.delete(url, headers=self.headers)

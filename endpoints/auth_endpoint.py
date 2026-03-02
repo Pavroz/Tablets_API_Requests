@@ -1,6 +1,6 @@
 import requests
 from config import config
-
+from requests import Response
 
 
 class AuthEndpoint:
@@ -22,48 +22,48 @@ class AuthEndpoint:
     #     assert response.status_code == 200 # Проверка, что код ответа 200
     #     return response.text
 
-    def auth_correct(self):
+    def auth_correct(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': config.PASSWORD}
         response = requests.post(url, json=payload)
         return response
 
 
-    def auth_empty_login_and_password(self):
+    def auth_empty_login_and_password(self) -> Response:
         """Авторизация с пустыми полями"""
         url = f'{config.URL}/common/auth'
         payload = {'login': ' ', 'password': ' '}
         response = requests.post(url, json=payload)
         return response
 
-    def auth_empty_login(self):
+    def auth_empty_login(self) -> Response:
         """Авторизация с некорректным логином"""
         url = f'{config.URL}/common/auth'
         payload = {'login': ' ', 'password': config.PASSWORD}
         response = requests.post(url, json=payload)
         return response
 
-    def auth_empty_password(self):
+    def auth_empty_password(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': ' '}
         response = requests.post(url, json=payload)
         return response
 
-    def auth_incorrect_login_and_password(self):
+    def auth_incorrect_login_and_password(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': 'qwe', 'password': 'qwe'}
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{payload["login"]}' не найден"
         return response
 
-    def auth_incorrect_login(self):
+    def auth_incorrect_login(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': 'qwe', 'password': config.PASSWORD}
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{payload["login"]}' не найден"
         return response
 
-    def auth_incorrect_password(self):
+    def auth_incorrect_password(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': 'qwe'}
         response = requests.post(url, json=payload)
