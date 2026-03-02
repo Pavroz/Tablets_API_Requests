@@ -5,15 +5,16 @@ from config import config
 
 class AuthEndpoint:
 
-    def get_auth_token(self):
-        url = f'{config.URL}/common/auth'
-        payload = {'login': f'{config.LOGIN}', 'password': f'{config.PASSWORD}'}
-        response = requests.post(url, json=payload)
-        response.raise_for_status() # Проверка, что ответ успешен
-        assert isinstance(response.text, str) # Проверка, что ответ - строка
-        assert len(response.text) > 0 # Проверка, что длина ответа > 0
-        assert response.status_code == 200 # Проверка, что код ответа 200
-        return response.text
+    # Убрано в фикстуру
+    # def get_auth_token(self):
+    #     url = f'{config.URL}/common/auth'
+    #     payload = {'login': f'{config.LOGIN}', 'password': f'{config.PASSWORD}'}
+    #     response = requests.post(url, json=payload)
+    #     response.raise_for_status() # Проверка, что ответ успешен
+    #     assert isinstance(response.text, str) # Проверка, что ответ - строка
+    #     assert len(response.text) > 0 # Проверка, что длина ответа > 0
+    #     assert response.status_code == 200 # Проверка, что код ответа 200
+    #     return response.text
 
     def auth_empty_login_and_password(self):
         """Авторизация с пустыми полями"""

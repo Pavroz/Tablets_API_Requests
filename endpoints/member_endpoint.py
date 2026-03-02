@@ -3,14 +3,18 @@ import requests
 from config import config
 import random
 import string
+import conftest
 
 class MemberEndpoint(AuthEndpoint):
 
-    def _random_string(self):
+    token = conftest.get_auth_token()
+
+    @staticmethod
+    def _random_string():
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
     def create_member(self, id_profile, middlename=None, subject=None, position=None):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/members'
         headers = {'Authorization': f'Bearer {token}'}
         payload = {
@@ -26,7 +30,7 @@ class MemberEndpoint(AuthEndpoint):
 
 
     def get_member(self, id_member):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/members/{id_member}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
@@ -34,7 +38,7 @@ class MemberEndpoint(AuthEndpoint):
 
 
     def put_member(self, id_profile, id_member, firstname, lastname, middlename=None, position=None, subject=None):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/members'
         headers = {'Authorization': f'Bearer {token}'}
         payload = {

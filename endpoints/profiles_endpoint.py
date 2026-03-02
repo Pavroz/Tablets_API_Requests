@@ -3,10 +3,12 @@ import random
 import string
 from endpoints.auth_endpoint import AuthEndpoint
 from config import config
-
+import conftest
 
 
 class ProfileEndpoint(AuthEndpoint):
+
+    token = conftest.get_auth_token()
 
     def _generate_profile_name(self, prefix='test_', length=20):
         suffix = ''.join(random.choice(string.ascii_lowercase + string.digits)
@@ -17,7 +19,7 @@ class ProfileEndpoint(AuthEndpoint):
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
     def get_profile_by_id(self, id_for_get):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/{id_for_get}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
@@ -29,7 +31,7 @@ class ProfileEndpoint(AuthEndpoint):
     def put_profile_by_id(self, id_for_put):
         name = self._generate_profile_name()
         description = self._random_string()
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/{id_for_put}'
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
@@ -41,7 +43,7 @@ class ProfileEndpoint(AuthEndpoint):
         return response
 
     def delete_profile(self, id_for_delete):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/{id_for_delete}'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.delete(url, headers=headers)
@@ -50,7 +52,7 @@ class ProfileEndpoint(AuthEndpoint):
         return response
 
     def get_all_profiles(self):
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
@@ -62,7 +64,7 @@ class ProfileEndpoint(AuthEndpoint):
     def create_new_profile(self):
         name = self._generate_profile_name()
         description = self._random_string()
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
@@ -74,7 +76,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def copy_profile(self, id_for_copy):
         new_name = self._generate_profile_name()
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/{id_for_copy}/copy'
         params = {'name': new_name}
         headers = {'Authorization': f'Bearer {token}'}
@@ -86,7 +88,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def get_active_profile(self):
         """Получение активного профиля"""
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.get(url, headers=headers)
@@ -94,7 +96,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def activate_profile(self, id_for_set):
         """Активация профиля"""
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/active'
         params = {'id': id_for_set}
         headers = {'Authorization': f'Bearer {token}'}
@@ -103,7 +105,7 @@ class ProfileEndpoint(AuthEndpoint):
 
     def deactivate_profile(self):
         """Деактивация профиля"""
-        token = self.get_auth_token()
+        token = self.token
         url = f'{config.URL}/profiles/active'
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.delete(url, headers=headers)
