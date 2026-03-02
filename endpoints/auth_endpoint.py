@@ -5,6 +5,12 @@ from config import config
 
 class AuthEndpoint:
 
+    def __init__(self, token: str | None = None):
+        self.token = token
+        self.headers = (
+            {'Authorization': f'Bearer {token}'} if token else {}
+        )
+
     # Убрано в фикстуру
     # def get_auth_token(self):
     #     url = f'{config.URL}/common/auth'
@@ -15,6 +21,13 @@ class AuthEndpoint:
     #     assert len(response.text) > 0 # Проверка, что длина ответа > 0
     #     assert response.status_code == 200 # Проверка, что код ответа 200
     #     return response.text
+
+    def auth_correct(self):
+        url = f'{config.URL}/common/auth'
+        payload = {'login': config.LOGIN, 'password': config.PASSWORD}
+        response = requests.post(url, json=payload)
+        return response
+
 
     def auth_empty_login_and_password(self):
         """Авторизация с пустыми полями"""
@@ -32,7 +45,7 @@ class AuthEndpoint:
 
     def auth_empty_password(self):
         url = f'{config.URL}/common/auth'
-        payload = {'login': f'{config.LOGIN}', 'password': ' '}
+        payload = {'login': config.LOGIN, 'password': ' '}
         response = requests.post(url, json=payload)
         return response
 

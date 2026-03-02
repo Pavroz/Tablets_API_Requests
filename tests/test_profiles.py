@@ -43,18 +43,20 @@ class TestProfiles:
     @allure.title('Проверка создания профиля')
     @pytest.mark.profiles
     def test_create_new_profile(self, profile_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile()
-        profile_endpoint.delete_profile(id_new_profile)
+        response = profile_endpoint.create_new_profile()
+        assert response.status_code == 201
+        assert isinstance(response.json(), dict)
+        profile_endpoint.delete_profile(response.json()['id'])
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка копирования профиля')
     @pytest.mark.profiles
     def test_copy_profile(self, profile_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile()
-        new_response = profile_endpoint.copy_profile(id_new_profile)
+        response = profile_endpoint.create_new_profile()
+        new_response = profile_endpoint.copy_profile(response)
         assert new_response.status_code == 201
         assert isinstance(new_response.json(), dict)
-        profile_endpoint.delete_profile(id_new_profile)
+        profile_endpoint.delete_profile(response)
         profile_endpoint.delete_profile(new_response.json()["id"])
 
     @allure.story('Позитивные сценарии')

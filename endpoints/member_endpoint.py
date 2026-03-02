@@ -3,11 +3,11 @@ import requests
 from config import config
 import random
 import string
-import conftest
 
 class MemberEndpoint(AuthEndpoint):
 
-    token = conftest.get_auth_token()
+    def __init__(self, token: str):
+        super().__init__(token)
 
     @staticmethod
     def _random_string():

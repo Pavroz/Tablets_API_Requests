@@ -1,3 +1,4 @@
+import allure
 import pytest
 import requests
 
@@ -13,14 +14,14 @@ def auth_endpoint():
     return AuthEndpoint()
 
 @pytest.fixture()
-def profile_endpoint():
-    return ProfileEndpoint()
+def profile_endpoint(get_auth_token):
+    return ProfileEndpoint(token=get_auth_token)
 
 @pytest.fixture()
-def member_endpoint():
-    return MemberEndpoint()
+def member_endpoint(get_auth_token):
+    return MemberEndpoint(token=get_auth_token)
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def get_auth_token():
     url = f'{config.URL}/common/auth'
     payload = {'login': f'{config.LOGIN}', 'password': f'{config.PASSWORD}'}
@@ -29,4 +30,6 @@ def get_auth_token():
     assert isinstance(response.text, str) # Проверка, что ответ - строка
     assert len(response.text) > 0 # Проверка, что длина ответа > 0
     assert response.status_code == 200 # Проверка, что код ответа 200
-    return response.text
+    token = response.text
+    allure.attach(token, name="Auth Token", attachment_type=allure.attachment_type.TEXT)
+    return token

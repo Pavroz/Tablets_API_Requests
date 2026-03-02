@@ -3,12 +3,13 @@ import random
 import string
 from endpoints.auth_endpoint import AuthEndpoint
 from config import config
-import conftest
+
 
 
 class ProfileEndpoint(AuthEndpoint):
 
-    token = conftest.get_auth_token()
+    def __init__(self, token: str):
+        super().__init__(token)
 
     def _generate_profile_name(self, prefix='test_', length=20):
         suffix = ''.join(random.choice(string.ascii_lowercase + string.digits)
@@ -19,10 +20,10 @@ class ProfileEndpoint(AuthEndpoint):
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
     def get_profile_by_id(self, id_for_get):
-        token = self.token
+        # token = self.token
         url = f'{config.URL}/profiles/{id_for_get}'
-        headers = {'Authorization': f'Bearer {token}'}
-        response = requests.get(url, headers=headers)
+        # headers = {'Authorization': f'Bearer {token}'}
+        response = requests.get(url, headers=self.headers)
         # assert response.status_code == 200
         # assert isinstance(response.json(), dict)
         # print('Профиль получен успешно')
@@ -69,10 +70,7 @@ class ProfileEndpoint(AuthEndpoint):
         payload = {'name': name, 'description': description}
         headers = {'Authorization': f'Bearer {token}'}
         response = requests.post(url, json=payload, headers=headers)
-        assert response.status_code == 201
-        assert isinstance(response.json(), dict)
-        # print('\nПрофиль создался успешно')
-        return response.json()['id']
+        return response
 
     def copy_profile(self, id_for_copy):
         new_name = self._generate_profile_name()
