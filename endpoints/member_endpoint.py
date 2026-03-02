@@ -14,9 +14,7 @@ class MemberEndpoint(AuthEndpoint):
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
     def create_member(self, id_profile, middlename=None, subject=None, position=None):
-        token = self.token
         url = f'{config.URL}/members'
-        headers = {'Authorization': f'Bearer {token}'}
         payload = {
             "firstName": "Иван",
             "lastName": "Иванов",
@@ -25,22 +23,18 @@ class MemberEndpoint(AuthEndpoint):
             "county": subject,
             "profileId": id_profile
         }
-        response = requests.post(url, json=payload, headers=headers)
+        response = requests.post(url, json=payload, headers=self.headers)
         return response
 
 
     def get_member(self, id_member):
-        token = self.token
         url = f'{config.URL}/members/{id_member}'
-        headers = {'Authorization': f'Bearer {token}'}
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=self.headers)
         return response
 
 
     def put_member(self, id_profile, id_member, firstname, lastname, middlename=None, position=None, subject=None):
-        token = self.token
         url = f'{config.URL}/members'
-        headers = {'Authorization': f'Bearer {token}'}
         payload = {
             'id': id_member,
             'firstName': firstname,
@@ -50,7 +44,7 @@ class MemberEndpoint(AuthEndpoint):
             'county': subject,
             'profileId': id_profile
         }
-        response = requests.put(url, json=payload, headers=headers)
+        response = requests.put(url, json=payload, headers=self.headers)
         return response
 
 

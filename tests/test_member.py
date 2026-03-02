@@ -12,7 +12,7 @@ class TestMember:
             self, profile_endpoint, member_endpoint,
             middlename, subject, position
     ):
-        id_new_profile = profile_endpoint.create_new_profile()
+        id_new_profile = profile_endpoint.create_new_profile().json()['id']
         try:
             response = member_endpoint.create_member(
                 id_profile=id_new_profile,
@@ -26,7 +26,7 @@ class TestMember:
             profile_endpoint.delete_profile(id_new_profile)
 
     def test_get_member(self, profile_endpoint, member_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile()
+        id_new_profile = profile_endpoint.create_new_profile().json()['id']
         id_member = member_endpoint.create_member(id_new_profile)
         try:
             response = member_endpoint.get_member(id_member.json()['id'])
@@ -42,7 +42,7 @@ class TestMember:
     def test_put_member(
             self, profile_endpoint, member_endpoint, firstname,
             lastname, middlename, position, subject):
-        id_new_profile = profile_endpoint.create_new_profile()
+        id_new_profile = profile_endpoint.create_new_profile().json()['id']
         id_member = member_endpoint.create_member(id_profile=id_new_profile)
         try:
             response = member_endpoint.put_member(
