@@ -1,0 +1,270 @@
+2026-03-03 17:24:11,563 | INFO | test_auth | Старт теста: проверка корректной авторизации
+2026-03-03 17:24:11,563 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-03 17:24:11,564 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-03 17:24:11,564 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
+2026-03-03 17:24:11,939 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
+2026-03-03 17:24:11,939 | INFO | test_auth | Статус ответа: 200
+2026-03-03 17:24:11,951 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:24:11,953 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_isyyy10h32izue3
+2026-03-03 17:24:11,953 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_isyyy10h32izue3', 'description': 'ejnszwzavl'}
+2026-03-03 17:24:12,238 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:12,306 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:24:12,308 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_grfz5cwnz0enhj5
+2026-03-03 17:24:12,308 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_grfz5cwnz0enhj5', 'description': 'emwjcfatxq'}
+2026-03-03 17:24:12,539 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:24:12,539 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:24:12,540 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_04ya4ybyqmwfi2w
+2026-03-03 17:24:12,541 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_04ya4ybyqmwfi2w', 'description': 'zyyfghmscs'}
+2026-03-03 17:24:12,541 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_jxbjcjc4bmdnsng
+2026-03-03 17:24:12,541 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_jxbjcjc4bmdnsng', 'description': 'tcjwrnoach'}
+2026-03-03 17:24:12,582 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:24:12,583 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_aqo2xr2eqwxb7oo
+2026-03-03 17:24:12,583 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_aqo2xr2eqwxb7oo', 'description': 'cwqntyozbt'}
+2026-03-03 17:24:12,591 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:12,808 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_g6ienzr3yi43pm9
+2026-03-03 17:24:12,808 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_g6ienzr3yi43pm9', 'description': 'obpgdtzrfm'}
+2026-03-03 17:24:12,821 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:12,822 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:12,863 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,089 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,156 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_is259uyohp8fz9f
+2026-03-03 17:24:13,156 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_is259uyohp8fz9f', 'description': 'zsffcwsxkw'}
+2026-03-03 17:24:13,386 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_850auy31yliifmy
+2026-03-03 17:24:13,386 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_850auy31yliifmy', 'description': 'qacxnzdxit'}
+2026-03-03 17:24:13,386 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_6cg4brtvit3ymn3
+2026-03-03 17:24:13,386 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_6cg4brtvit3ymn3', 'description': 'ulcrvvgtnr'}
+2026-03-03 17:24:13,425 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_ju03ledrhnzzjmg
+2026-03-03 17:24:13,425 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_ju03ledrhnzzjmg', 'description': 'cpzlzflnhw'}
+2026-03-03 17:24:13,434 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,652 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_xcnixi7brt3n5xr
+2026-03-03 17:24:13,652 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_xcnixi7brt3n5xr', 'description': 'lrjmswnbeu'}
+2026-03-03 17:24:13,674 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,676 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,706 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:13,931 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:14,009 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_zvu27wymm1yysqq
+2026-03-03 17:24:14,009 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_zvu27wymm1yysqq', 'description': 'hzkwklpgsv'}
+2026-03-03 17:24:14,236 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_0mob44md1kntx3h
+2026-03-03 17:24:14,236 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_0mob44md1kntx3h', 'description': 'egmbrpgcry'}
+2026-03-03 17:24:14,294 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:14,529 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:14,533 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_a49pxy295ygrttx
+2026-03-03 17:24:14,533 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_a49pxy295ygrttx', 'description': 'yqsjicjqid'}
+2026-03-03 17:24:14,574 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_d65ssa6v81ptp1u
+2026-03-03 17:24:14,574 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_d65ssa6v81ptp1u', 'description': 'rdxikmirnk'}
+2026-03-03 17:24:14,784 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_lpgcnlwhghviyj2
+2026-03-03 17:24:14,784 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_lpgcnlwhghviyj2', 'description': 'xgzilvukvo'}
+2026-03-03 17:24:14,819 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:14,853 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:15,064 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:15,142 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_2jeqyiuq5q4pj7y
+2026-03-03 17:24:15,142 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_2jeqyiuq5q4pj7y', 'description': 'vvliacubyj'}
+2026-03-03 17:24:15,394 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_l79hg36rcr2s5m2
+2026-03-03 17:24:15,394 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_l79hg36rcr2s5m2', 'description': 'rfibptydrn'}
+2026-03-03 17:24:15,419 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:15,672 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_1wpuukr7hga37if
+2026-03-03 17:24:15,673 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_1wpuukr7hga37if', 'description': 'blrdcrllmd'}
+2026-03-03 17:24:15,675 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:15,692 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_e6chb7l43mdzqxh
+2026-03-03 17:24:15,692 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_e6chb7l43mdzqxh', 'description': 'thbpgppanm'}
+2026-03-03 17:24:15,906 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_68pld46boce5wjm
+2026-03-03 17:24:15,907 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_68pld46boce5wjm', 'description': 'pscqhxeobu'}
+2026-03-03 17:24:15,951 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:15,974 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:16,183 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:16,254 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_hhdn9io52ydyf0x
+2026-03-03 17:24:16,254 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_hhdn9io52ydyf0x', 'description': 'flmkwinnoe'}
+2026-03-03 17:24:16,530 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_221o15xb432ad13
+2026-03-03 17:24:16,530 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_221o15xb432ad13', 'description': 'wglnzqnztf'}
+2026-03-03 17:24:16,534 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:16,790 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_f0xrnbj36isa13w
+2026-03-03 17:24:16,790 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_f0xrnbj36isa13w', 'description': 'vvchgtlkrw'}
+2026-03-03 17:24:16,799 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_p83j4cu3rzc9ec5
+2026-03-03 17:24:16,799 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_p83j4cu3rzc9ec5', 'description': 'ywtjwogkaa'}
+2026-03-03 17:24:16,808 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:17,068 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:17,077 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:24:17,094 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_wqpbxydv88l0iq1
+2026-03-03 17:24:17,094 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_wqpbxydv88l0iq1', 'description': 'lctjjxkjfv'}
+2026-03-03 17:24:17,374 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:35,494 | INFO | test_auth | Старт теста: проверка корректной авторизации
+2026-03-03 17:25:35,494 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-03 17:25:35,494 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-03 17:25:35,495 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
+2026-03-03 17:25:35,869 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:25:35,871 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_t3h3aykrvij1gt2
+2026-03-03 17:25:35,871 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_t3h3aykrvij1gt2', 'description': 'oexiasexed'}
+2026-03-03 17:25:35,874 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
+2026-03-03 17:25:35,875 | INFO | test_auth | Статус ответа: 200
+2026-03-03 17:25:36,151 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:36,227 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:25:36,229 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_vpmk46ezf99xc2x
+2026-03-03 17:25:36,229 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_vpmk46ezf99xc2x', 'description': 'uutuobpnkl'}
+2026-03-03 17:25:36,425 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:25:36,426 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_f2586fm2oiwq9d4
+2026-03-03 17:25:36,426 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:25:36,426 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_f2586fm2oiwq9d4', 'description': 'yqxghtcvpm'}
+2026-03-03 17:25:36,427 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_hroq1mswhz1xg09
+2026-03-03 17:25:36,427 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_hroq1mswhz1xg09', 'description': 'luvqijsmiw'}
+2026-03-03 17:25:36,502 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:25:36,503 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_zxbv91lld1alpxx
+2026-03-03 17:25:36,503 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_zxbv91lld1alpxx', 'description': 'ydzavermlp'}
+2026-03-03 17:25:36,509 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:36,703 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:36,705 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:36,710 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_d9gskgtwrq0qksy
+2026-03-03 17:25:36,710 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_d9gskgtwrq0qksy', 'description': 'ptujzkvcve'}
+2026-03-03 17:25:36,780 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:36,992 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,066 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_kje9exgh80xj4h0
+2026-03-03 17:25:37,066 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_kje9exgh80xj4h0', 'description': 'yowerholnp'}
+2026-03-03 17:25:37,262 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_3ans9t8qrzg49lr
+2026-03-03 17:25:37,262 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_3ans9t8qrzg49lr', 'description': 'bgdpnihpwe'}
+2026-03-03 17:25:37,263 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_k9ns827yn8kzdq8
+2026-03-03 17:25:37,263 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_k9ns827yn8kzdq8', 'description': 'wtejguwxww'}
+2026-03-03 17:25:37,340 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_fxty8hix5unbuei
+2026-03-03 17:25:37,340 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_fxty8hix5unbuei', 'description': 'vdukkrqftw'}
+2026-03-03 17:25:37,342 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,542 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,545 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,553 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_chsihiu60ldw2gb
+2026-03-03 17:25:37,553 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_chsihiu60ldw2gb', 'description': 'dazcciqxvv'}
+2026-03-03 17:25:37,626 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,833 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:37,913 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_7gdzjb62euxzlhi
+2026-03-03 17:25:37,913 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_7gdzjb62euxzlhi', 'description': 'ktsnvfunwn'}
+2026-03-03 17:25:38,107 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_q5t5mu63uh5ozf9
+2026-03-03 17:25:38,107 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_q5t5mu63uh5ozf9', 'description': 'tfrhiktivf'}
+2026-03-03 17:25:38,190 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:38,384 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_idqm7rv2k7ljgg6
+2026-03-03 17:25:38,384 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_idqm7rv2k7ljgg6', 'description': 'slmfffkjhf'}
+2026-03-03 17:25:38,390 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:38,473 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_k4z1br281bb84bv
+2026-03-03 17:25:38,473 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_k4z1br281bb84bv', 'description': 'pwcwxhlpoq'}
+2026-03-03 17:25:38,665 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:38,673 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_1ljo8mv6cikk5ai
+2026-03-03 17:25:38,673 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_1ljo8mv6cikk5ai', 'description': 'jdpttrqjxi'}
+2026-03-03 17:25:38,756 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:38,953 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:39,044 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_ffkjz73xvi0bkre
+2026-03-03 17:25:39,044 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_ffkjz73xvi0bkre', 'description': 'fyiehxzawl'}
+2026-03-03 17:25:39,229 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_9sks3a8eavwvb10
+2026-03-03 17:25:39,229 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_9sks3a8eavwvb10', 'description': 'kaffgbriho'}
+2026-03-03 17:25:39,323 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:39,504 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_nxmen0w1zz8hodr
+2026-03-03 17:25:39,504 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_nxmen0w1zz8hodr', 'description': 'mgbirahwwy'}
+2026-03-03 17:25:39,515 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:39,608 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_gi1pmv79pf9489p
+2026-03-03 17:25:39,608 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_gi1pmv79pf9489p', 'description': 'duwccorefw'}
+2026-03-03 17:25:39,789 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:39,813 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_y0enah0ye4mzg6a
+2026-03-03 17:25:39,813 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_y0enah0ye4mzg6a', 'description': 'jjbraphgge'}
+2026-03-03 17:25:39,888 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:40,104 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:40,192 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_poi4w6fqyc0dte3
+2026-03-03 17:25:40,192 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_poi4w6fqyc0dte3', 'description': 'uztkuyzrbi'}
+2026-03-03 17:25:40,473 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:40,474 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_0wpzx9z6l70hk0k
+2026-03-03 17:25:40,474 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_0wpzx9z6l70hk0k', 'description': 'ytubrttffw'}
+2026-03-03 17:25:40,653 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_wmmow761x6thcp2
+2026-03-03 17:25:40,653 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_wmmow761x6thcp2', 'description': 'xrxsrcfafy'}
+2026-03-03 17:25:40,669 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_ymqkji6whdy6sq3
+2026-03-03 17:25:40,669 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_ymqkji6whdy6sq3', 'description': 'ljmircfpmp'}
+2026-03-03 17:25:40,756 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:40,933 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:40,947 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:25:41,036 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_1dq7sw2gllnyo6t
+2026-03-03 17:25:41,036 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_1dq7sw2gllnyo6t', 'description': 'eqkltjhslu'}
+2026-03-03 17:25:41,350 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:36,978 | INFO | test_auth | Старт теста: проверка корректной авторизации
+2026-03-03 17:30:36,978 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-03 17:30:36,978 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-03 17:30:36,978 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
+2026-03-03 17:30:37,342 | ERROR | endpoints.auth_endpoint | Ожидался статус 401 при некорректном пароле, получили 401
+2026-03-03 17:30:37,342 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:30:37,344 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_3caavw593eja56b
+2026-03-03 17:30:37,344 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_3caavw593eja56b', 'description': 'yexwayaqed'}
+2026-03-03 17:30:37,385 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
+2026-03-03 17:30:37,385 | INFO | test_auth | Статус ответа: 200
+2026-03-03 17:30:37,631 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:37,699 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:30:37,701 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_hs9whhmjp82xy3x
+2026-03-03 17:30:37,701 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_hs9whhmjp82xy3x', 'description': 'miktqrpixc'}
+2026-03-03 17:30:37,893 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:30:37,895 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_krmxpb91oiezrhn
+2026-03-03 17:30:37,895 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_krmxpb91oiezrhn', 'description': 'cbtgdcroyl'}
+2026-03-03 17:30:37,932 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:30:37,933 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_j2y1gksqjwl271u
+2026-03-03 17:30:37,934 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_j2y1gksqjwl271u', 'description': 'hriwhlanfe'}
+2026-03-03 17:30:37,979 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,007 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:30:38,009 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_mxesikldd2slo8k
+2026-03-03 17:30:38,009 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_mxesikldd2slo8k', 'description': 'odoxmgfbhr'}
+2026-03-03 17:30:38,179 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,186 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_x0nba0n6e5wzqb6
+2026-03-03 17:30:38,186 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_x0nba0n6e5wzqb6', 'description': 'bxugcwtjxa'}
+2026-03-03 17:30:38,222 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,292 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,465 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,535 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_1cl8xj7oqzyjb16
+2026-03-03 17:30:38,535 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_1cl8xj7oqzyjb16', 'description': 'vwmzjcjprc'}
+2026-03-03 17:30:38,733 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_jd41y1qf7v90cgy
+2026-03-03 17:30:38,733 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_jd41y1qf7v90cgy', 'description': 'zvpxqjiaip'}
+2026-03-03 17:30:38,778 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_kvvdhpwce5nsjch
+2026-03-03 17:30:38,779 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_kvvdhpwce5nsjch', 'description': 'efgofikapd'}
+2026-03-03 17:30:38,813 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:38,849 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_livszuius5095rw
+2026-03-03 17:30:38,849 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_livszuius5095rw', 'description': 'uixqwbgwej'}
+2026-03-03 17:30:39,010 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,018 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_8ez5h9p0w2zybxz
+2026-03-03 17:30:39,018 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_8ez5h9p0w2zybxz', 'description': 'whzvwhmurv'}
+2026-03-03 17:30:39,060 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,127 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,307 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,368 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_ffspg57dj6jws4c
+2026-03-03 17:30:39,368 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_ffspg57dj6jws4c', 'description': 'jqwlglcuzw'}
+2026-03-03 17:30:39,572 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_2sraaxwgxqkby9a
+2026-03-03 17:30:39,572 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_2sraaxwgxqkby9a', 'description': 'fdmcnkalzt'}
+2026-03-03 17:30:39,647 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,853 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:39,899 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_4gppnts9zhe9y95
+2026-03-03 17:30:39,899 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_4gppnts9zhe9y95', 'description': 'ecysrtrmmx'}
+2026-03-03 17:30:39,985 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_t00xzz79i5fc0pa
+2026-03-03 17:30:39,985 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_t00xzz79i5fc0pa', 'description': 'kjlwlarqeb'}
+2026-03-03 17:30:40,156 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_f88937yu6akdl4d
+2026-03-03 17:30:40,156 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_f88937yu6akdl4d', 'description': 'niwzjgmaoh'}
+2026-03-03 17:30:40,180 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:40,266 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:40,439 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:40,496 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_nogasd9s93l7fej
+2026-03-03 17:30:40,496 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_nogasd9s93l7fej', 'description': 'ljbtvcyyme'}
+2026-03-03 17:30:40,692 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_2ud6z2awoc29s9u
+2026-03-03 17:30:40,692 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_2ud6z2awoc29s9u', 'description': 'nrsmucmdhm'}
+2026-03-03 17:30:40,780 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:40,972 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:41,017 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_m9xzbt69xwufnzi
+2026-03-03 17:30:41,017 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_m9xzbt69xwufnzi', 'description': 'ddlvbyflog'}
+2026-03-03 17:30:41,108 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_mzar8mcm7ob9u4b
+2026-03-03 17:30:41,108 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_mzar8mcm7ob9u4b', 'description': 'zeegaukfaj'}
+2026-03-03 17:30:41,276 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_6e6rfomx4ngobog
+2026-03-03 17:30:41,277 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_6e6rfomx4ngobog', 'description': 'dtifljbvkr'}
+2026-03-03 17:30:41,354 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:41,384 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:41,555 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:41,637 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_wbu3b3vo2eg1ikl
+2026-03-03 17:30:41,637 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_wbu3b3vo2eg1ikl', 'description': 'fyurmtudyc'}
+2026-03-03 17:30:41,915 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:41,938 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_2yf7tm175kk3t2t
+2026-03-03 17:30:41,938 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_2yf7tm175kk3t2t', 'description': 'szuxxnfvtb'}
+2026-03-03 17:30:42,087 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_aubn9nn5sku7mlk
+2026-03-03 17:30:42,087 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_aubn9nn5sku7mlk', 'description': 'tzjthwdxji'}
+2026-03-03 17:30:42,193 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_qej6s1306zosx4h
+2026-03-03 17:30:42,193 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_qej6s1306zosx4h', 'description': 'ipzzvavvxf'}
+2026-03-03 17:30:42,214 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:42,368 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:42,474 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:30:42,475 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_10fuxc8ef6ngibv
+2026-03-03 17:30:42,475 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_10fuxc8ef6ngibv', 'description': 'jlqyslrinw'}
+2026-03-03 17:30:42,754 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:31:47,506 | ERROR | endpoints.auth_endpoint | Ожидался статус 401 при некорректном пароле, получили 401
+2026-03-03 17:33:04,754 | ERROR | endpoints.auth_endpoint | Ожидался статус 401 при некорректном пароле, получили 401

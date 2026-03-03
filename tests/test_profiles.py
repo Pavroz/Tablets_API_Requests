@@ -1,5 +1,8 @@
 import pytest
 import allure
+import logging
+
+logger = logging.getLogger(__name__)
 
 @allure.feature('Страница профилей')
 class TestProfiles:
@@ -8,11 +11,11 @@ class TestProfiles:
     @allure.title('Проверка получения профиля')
     @pytest.mark.profiles
     def test_get_profile_by_id(self, profile_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile().json()['id']
-        response = profile_endpoint.get_profile_by_id(id_new_profile)
+        id_profile = profile_endpoint.create_new_profile().json()['id']
+        response = profile_endpoint.get_profile_by_id(id_profile)
         assert response.status_code == 200
         assert isinstance(response.json(), dict)
-        profile_endpoint.delete_profile(id_new_profile)
+        profile_endpoint.delete_profile(id_profile)
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка изменения профиля')
@@ -28,8 +31,10 @@ class TestProfiles:
     @allure.title('Проверка удаления профиля')
     @pytest.mark.profiles
     def test_delete_profile(self, profile_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile().json()['id']
-        profile_endpoint.delete_profile(id_new_profile)
+        id_profile = profile_endpoint.create_new_profile().json()['id']
+        profile_endpoint.delete_profile(id_profile)
+        response = profile_endpoint.get_profile_by_id(id_profile)
+        assert response.status_code == 404
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка получения всех профилей')
@@ -44,6 +49,7 @@ class TestProfiles:
     @pytest.mark.profiles
     def test_create_new_profile(self, profile_endpoint):
         response = profile_endpoint.create_new_profile()
+        logger.info(f'Создан профиль id={response.json()["id"]}, name={response.json()["name"]}')
         assert response.status_code == 201
         assert isinstance(response.json(), dict)
         profile_endpoint.delete_profile(response.json()['id'])
@@ -70,10 +76,12 @@ class TestProfiles:
     @allure.title('Проверка активации профиля')
     @pytest.mark.profiles
     def test_activate_profile(self, profile_endpoint):
-        id_new_profile = profile_endpoint.create_new_profile().json()['id']
-        response = profile_endpoint.activate_profile(id_new_profile)
+        id_profile = profile_endpoint.create_new_profile().json()['id']
+        response = profile_endpoint.activate_profile(id_profile)
         assert response.status_code == 204
-        profile_endpoint.delete_profile(id_new_profile)
+        active = profile_endpoint.get_active_profile()
+        assert active.json() == id_profile
+        profile_endpoint.delete_profile(id_profile)
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка деактивации профиля')

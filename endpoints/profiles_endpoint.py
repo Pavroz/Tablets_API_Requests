@@ -4,8 +4,10 @@ import string
 from endpoints.auth_endpoint import AuthEndpoint
 from config import config
 from requests import Response
+import logging
 
 
+logger = logging.getLogger(__name__)
 
 class ProfileEndpoint(AuthEndpoint):
 
@@ -60,8 +62,13 @@ class ProfileEndpoint(AuthEndpoint):
         description = self._random_string()
         url = f'{config.URL}/profiles'
         payload = {'name': name, 'description': description}
+
+        logger.info(f'Создание нового профиля: {name}')
+        logger.info(f'url: {url}, payload: {payload}')
+
         response = requests.post(url, json=payload, headers=self.headers)
-        print(response)
+
+        logger.info(f'Создание профиля завершено. Статус: {response.status_code}')
         return response
 
     def copy_profile(self, id_for_copy: str) -> Response:

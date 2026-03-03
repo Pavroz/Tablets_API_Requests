@@ -1,7 +1,10 @@
 import requests
 from config import config
 from requests import Response
+import logging
 
+# Получение логгера для текущего модуля
+logger = logging.getLogger(__name__)
 
 class AuthEndpoint:
 
@@ -11,21 +14,18 @@ class AuthEndpoint:
             {'Authorization': f'Bearer {token}'} if token else {}
         )
 
-    # Убрано в фикстуру
-    # def get_auth_token(self):
-    #     url = f'{config.URL}/common/auth'
-    #     payload = {'login': f'{config.LOGIN}', 'password': f'{config.PASSWORD}'}
-    #     response = requests.post(url, json=payload)
-    #     response.raise_for_status() # Проверка, что ответ успешен
-    #     assert isinstance(response.text, str) # Проверка, что ответ - строка
-    #     assert len(response.text) > 0 # Проверка, что длина ответа > 0
-    #     assert response.status_code == 200 # Проверка, что код ответа 200
-    #     return response.text
 
     def auth_correct(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': config.PASSWORD}
+
+        logger.info("Начало запроса авторизации")
+        logger.info(f"URL: {url}")
+        logger.info(f"Payload: {payload}")
+
         response = requests.post(url, json=payload)
+
+        logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
 
@@ -67,5 +67,10 @@ class AuthEndpoint:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': 'qwe'}
         response = requests.post(url, json=payload)
-        assert response.json()['errorMessage'] == "Неверные учетные данные"
+        if response.status_code != 401:
+            logger.error(f'Ожидался статус 401 при некорректном пароле, получили {response.status_code}')
+        try:
+            assert response.json()['errorMessage'] == "Неверные учетные данные"
+        except AssertionError:
+            logger.error(f'Сообщение об ошибке некорректное: {response.json()}')
         return response

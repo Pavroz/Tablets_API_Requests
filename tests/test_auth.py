@@ -1,5 +1,9 @@
 import pytest
 import allure
+import logging
+
+
+logger = logging.getLogger(__name__)
 
 @allure.feature('Авторизация')
 class TestAuth:
@@ -8,11 +12,13 @@ class TestAuth:
     @allure.title('Проверка авторизации')
     @pytest.mark.auth
     def test_auth_correct(self, auth_endpoint):
+        logger.info('Старт теста: проверка корректной авторизации')
         response = auth_endpoint.auth_correct()
         assert isinstance(response.text, str)  # Проверка, что ответ - строка
         assert len(response.text) > 0  # Проверка, что длина ответа > 0
+        logger.info(f'Статус ответа: {response.status_code}')
         assert response.status_code == 200  # Проверка, что код ответа 200
-        return response.text
+        # return response.text
 
     @allure.story('Негативные сценарии')
     @allure.title('Проверка авторизации с пустыми полями ввода')
