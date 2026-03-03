@@ -268,3 +268,30 @@
 2026-03-03 17:30:42,754 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
 2026-03-03 17:31:47,506 | ERROR | endpoints.auth_endpoint | Ожидался статус 401 при некорректном пароле, получили 401
 2026-03-03 17:33:04,754 | ERROR | endpoints.auth_endpoint | Ожидался статус 401 при некорректном пароле, получили 401
+2026-03-03 17:51:45,867 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:51:45,869 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_amvyo21j46yqxx1
+2026-03-03 17:51:45,869 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_amvyo21j46yqxx1', 'description': 'zpwtexjzej'}
+2026-03-03 17:51:46,159 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:51:46,444 | INFO | test_profiles | Получен профиль id=4649
+2026-03-03 17:53:55,282 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:53:55,284 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_4xg1qxp55b96ksq
+2026-03-03 17:53:55,284 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_4xg1qxp55b96ksq', 'description': 'emzuxmkhfy'}
+2026-03-03 17:53:55,613 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:53:55,895 | INFO | test_profiles | Профиль id=4650 изменен, данные={'id': 4650, 'name': 'test_9tlg5adkfza9aij', 'description': 'tlffnfrggf', 'isActive': False}
+2026-03-03 17:54:32,173 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:54:32,175 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_6qxpumbm1e4oday
+2026-03-03 17:54:32,175 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_6qxpumbm1e4oday', 'description': 'bdsykjtemy'}
+2026-03-03 17:54:32,460 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:54:32,748 | INFO | test_profiles | Профиль изменен, новые данные: {'id': 4651, 'name': 'test_9gi5rvmpptfqerw', 'description': 'lmypjwglmv', 'isActive': False}
+2026-03-03 17:55:53,414 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:55:53,416 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_z2q6ezfbsifpq4c
+2026-03-03 17:55:53,416 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_z2q6ezfbsifpq4c', 'description': 'qugwyuanju'}
+2026-03-03 17:55:53,697 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:55:53,978 | INFO | test_profiles | Профиль успешно удален
+2026-03-03 17:55:54,259 | INFO | test_profiles | Удаленный профиль не найден
+2026-03-03 17:56:19,641 | INFO | conftest | Токен авторизации получен успешно
+2026-03-03 17:56:19,643 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_9kwsmlvz7aopv31
+2026-03-03 17:56:19,643 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_9kwsmlvz7aopv31', 'description': 'wvorhrlfgj'}
+2026-03-03 17:56:19,924 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
+2026-03-03 17:56:20,207 | INFO | test_profiles | Профиль успешно удален
+2026-03-03 17:56:20,504 | INFO | test_profiles | Удаленный профиль не найден, ошибка=404

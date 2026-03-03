@@ -13,8 +13,10 @@ class TestProfiles:
     def test_get_profile_by_id(self, profile_endpoint):
         id_profile = profile_endpoint.create_new_profile().json()['id']
         response = profile_endpoint.get_profile_by_id(id_profile)
+        logger.info(f'Получен профиль id={response.json()["id"]}')
         assert response.status_code == 200
         assert isinstance(response.json(), dict)
+        assert id_profile == response.json()['id']
         profile_endpoint.delete_profile(id_profile)
 
     @allure.story('Позитивные сценарии')
@@ -23,6 +25,7 @@ class TestProfiles:
     def test_put_profile_by_id(self, profile_endpoint):
         id_new_profile = profile_endpoint.create_new_profile().json()['id']
         response = profile_endpoint.put_profile_by_id(id_new_profile)
+        logger.info(f'Профиль изменен, новые данные: {response.json()}')
         assert response.status_code == 201
         assert isinstance(response.json(), dict)
         profile_endpoint.delete_profile(id_new_profile)
@@ -33,7 +36,9 @@ class TestProfiles:
     def test_delete_profile(self, profile_endpoint):
         id_profile = profile_endpoint.create_new_profile().json()['id']
         profile_endpoint.delete_profile(id_profile)
+        logger.info('Профиль успешно удален')
         response = profile_endpoint.get_profile_by_id(id_profile)
+        logger.info(f'Удаленный профиль не найден, ошибка: {response.status_code}')
         assert response.status_code == 404
 
     @allure.story('Позитивные сценарии')
