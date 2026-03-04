@@ -19,10 +19,13 @@ class AuthEndpoint:
     def auth_correct(self) -> Response:
         url = f'{config.URL}/common/auth'
         payload = {'login': config.LOGIN, 'password': config.PASSWORD}
+        safe_payload = payload.copy()
+        safe_payload['login'] = '***'
+        safe_payload["password"] = "***"
 
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
-        logger.info(f"Payload: {payload}")
+        logger.info(f"Payload: {safe_payload}")
         response = requests.post(url, json=payload)
 
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
@@ -51,7 +54,7 @@ class AuthEndpoint:
 
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
-        logger.info(f"Payload: {payload}")
+        logger.info(f"Payload: {payload['login']}")
         response = requests.post(url, json=payload)
 
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
@@ -64,7 +67,7 @@ class AuthEndpoint:
 
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
-        logger.info(f"Payload: {payload}")
+        logger.info(f"Payload: {payload['password']}")
         response = requests.post(url, json=payload)
 
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
@@ -91,7 +94,7 @@ class AuthEndpoint:
 
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
-        logger.info(f"Payload: {payload}")
+        logger.info(f"Payload: {payload['login']}")
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{payload["login"]}' не найден"
 
@@ -105,7 +108,7 @@ class AuthEndpoint:
 
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
-        logger.info(f"Payload: {payload}")
+        logger.info(f"Payload: {payload['password']}")
         response = requests.post(url, json=payload)
         if response.status_code != 401:
             logger.error(f'Ожидался статус 401 при некорректном пароле, получили {response.status_code}')

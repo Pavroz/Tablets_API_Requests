@@ -1,17 +1,25 @@
-2026-03-04 21:46:29,730 | INFO | conftest | ===== STARTED TEST: test_auth_correct =====
-2026-03-04 21:46:29,731 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
-2026-03-04 21:46:29,731 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
-2026-03-04 21:46:29,732 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
-2026-03-04 21:46:30,260 | ERROR | conftest | ===== FINISHED TEST: test_auth_correct — FAILED =====
-2026-03-04 21:46:52,127 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login_and_password =====
-2026-03-04 21:46:52,128 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
-2026-03-04 21:46:52,128 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
-2026-03-04 21:46:52,129 | INFO | endpoints.auth_endpoint | Payload: {'login': ' ', 'password': ' '}
-2026-03-04 21:46:52,420 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 400
-2026-03-04 21:46:52,422 | INFO | conftest | ===== FINISHED TEST: test_auth_empty_login_and_password — PASSED =====
-2026-03-04 21:46:56,412 | INFO | conftest | ===== STARTED TEST: test_auth_correct =====
-2026-03-04 21:46:56,413 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
-2026-03-04 21:46:56,414 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
-2026-03-04 21:46:56,414 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
-2026-03-04 21:46:56,786 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
-2026-03-04 21:46:56,787 | INFO | conftest | ===== FINISHED TEST: test_auth_correct — PASSED =====
+2026-03-04 21:49:33,186 | INFO | conftest | ===== STARTED TEST: test_auth_correct =====
+2026-03-04 21:49:33,188 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:49:33,188 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:49:33,188 | INFO | endpoints.auth_endpoint | Payload: {'login': '***', 'password': '***'}
+2026-03-04 21:49:33,570 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
+2026-03-04 21:49:33,572 | INFO | conftest | ===== FINISHED TEST: test_auth_correct — PASSED =====
+2026-03-04 21:56:33,482 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login =====
+2026-03-04 21:56:33,484 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:56:33,484 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:56:33,484 | INFO | endpoints.auth_endpoint | Payload: {'login': ' ', 'password': '321'}
+2026-03-04 21:56:54,773 | ERROR | conftest | ===== FINISHED TEST: test_auth_empty_login — FAILED =====
+2026-03-04 21:57:04,138 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login =====
+2026-03-04 21:57:04,139 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:57:04,139 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:57:04,139 | INFO | endpoints.auth_endpoint | Payload: {'login': ' ', 'password': '321'}
+2026-03-04 21:57:30,398 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login =====
+2026-03-04 21:57:30,400 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:57:30,400 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:57:30,400 | INFO | endpoints.auth_endpoint | Payload: {'login': ' ', 'password': '321'}
+2026-03-04 21:57:35,037 | ERROR | conftest | ===== FINISHED TEST: test_auth_empty_login — FAILED =====
+2026-03-04 21:58:48,757 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login =====
+2026-03-04 21:58:48,759 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:58:48,759 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:58:48,759 | INFO | endpoints.auth_endpoint | Payload:  
+2026-03-04 21:58:49,223 | ERROR | conftest | ===== FINISHED TEST: test_auth_empty_login — FAILED =====
