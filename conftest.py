@@ -7,11 +7,12 @@ from endpoints.member_endpoint import MemberEndpoint
 from endpoints.profiles_endpoint import ProfileEndpoint
 from utils.logger import setup_logger
 import logging
-
+from utils.validator import Validator
 
 # Поднимаем логгер для всего проекта
 setup_logger()
 logger = logging.getLogger(__name__)
+validator = Validator()
 
 @pytest.fixture()
 def auth_endpoint():
@@ -35,12 +36,13 @@ def get_auth_token():
         raise SystemExit('Тесты не могут выполняться без токена')
 
     response.raise_for_status() # Проверка, что ответ успешен
-    assert isinstance(response.text, str) # Проверка, что ответ - строка
-    assert len(response.text) > 0 # Проверка, что длина ответа > 0
-    assert response.status_code == 200 # Проверка, что код ответа 200
+    validator.assert_isinstance(response.text, str)
+    validator.assert_len(response.text)
+    validator.assert_status_code(response.status_code)
     token = response.text
     logger.info('Токен авторизации получен успешно')
-    allure.attach(token, name="Auth Token", attachment_type=allure.attachment_type.TEXT)
+    # Метод для добавления токена в файл
+    # allure.attach(token, name="Auth Token", attachment_type=allure.attachment_type.TEXT)
     return token
 
 @pytest.fixture(autouse=True)

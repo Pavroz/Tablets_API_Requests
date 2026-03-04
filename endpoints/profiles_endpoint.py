@@ -31,7 +31,6 @@ class ProfileEndpoint(AuthEndpoint):
 
         logger.info(f'Получение профиля по id: {id_for_get}')
         logger.info(f'url: {url}')
-
         response = requests.get(url, headers=self.headers)
 
         logger.info(f'Получение профиля завершено. Статус: {response.status_code}')
@@ -46,7 +45,6 @@ class ProfileEndpoint(AuthEndpoint):
 
         logger.info(f'Изменение профиля по id: {id_for_put}')
         logger.info(f'url: {url}, payload: {payload}')
-
         response = requests.put(url, json=payload, headers=self.headers)
 
         logger.info(f'Изменение профиля завершено. Статус: {response.status_code}')
@@ -57,7 +55,6 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles/{id_for_delete}'
 
         logger.info(f'Удаление профиля по id: {id_for_delete}')
-
         response = requests.delete(url, headers=self.headers)
         self.validator.assert_status_code(response, 204)
 
@@ -69,7 +66,6 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles'
 
         logger.info('Получение всех профилей')
-
         response = requests.get(url, headers=self.headers)
 
         logger.info(f'Получение всех профилей завершено. Статус: {response.status_code}')
@@ -84,7 +80,6 @@ class ProfileEndpoint(AuthEndpoint):
 
         logger.info(f'Создание нового профиля: {name}')
         logger.info(f'url: {url}, payload: {payload}')
-
         response = requests.post(url, json=payload, headers=self.headers)
 
         logger.info(f'Создание профиля завершено. Статус: {response.status_code}')
@@ -98,7 +93,6 @@ class ProfileEndpoint(AuthEndpoint):
 
         logger.info(f'Копирование профиля по id: {id_for_copy}')
         logger.info(f'url: {url}, params: {params}')
-
         response = requests.post(url, params=params, headers=self.headers)
 
         logger.info(f'Копирование профиля завершено. Статус: {response.status_code}')
@@ -110,7 +104,6 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles/active'
 
         logger.info('Получение активного профиля')
-
         response = requests.get(url, headers=self.headers)
 
         logger.info(f'Получение активного профиля завершено. Статус: {response.status_code}')
@@ -124,7 +117,6 @@ class ProfileEndpoint(AuthEndpoint):
 
         logger.info(f'Активация профиля по id: {id_for_set}')
         logger.info(f'url: {url}, params: {params}')
-
         response = requests.post(url, params=params, headers=self.headers)
 
         logger.info(f'Активация профиля завершена. Статус: {response.status_code}')
@@ -136,7 +128,6 @@ class ProfileEndpoint(AuthEndpoint):
         url = f'{config.URL}/profiles/active'
 
         logger.info('Деактивация активного профиля')
-
         response = requests.delete(url, headers=self.headers)
 
         logger.info(f'Деактивация активного профиля завершена. Статус: {response.status_code}')

@@ -23,7 +23,6 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
 
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
@@ -39,8 +38,8 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
@@ -53,8 +52,8 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
@@ -66,8 +65,8 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
@@ -79,9 +78,9 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{payload["login"]}' не найден"
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
@@ -93,9 +92,9 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
         assert response.json()['errorMessage'] == f"Пользователь с логином '{payload["login"]}' не найден"
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
 
@@ -107,7 +106,6 @@ class AuthEndpoint:
         logger.info("Начало запроса авторизации")
         logger.info(f"URL: {url}")
         logger.info(f"Payload: {payload}")
-
         response = requests.post(url, json=payload)
         if response.status_code != 401:
             logger.error(f'Ожидался статус 401 при некорректном пароле, получили {response.status_code}')
@@ -115,5 +113,6 @@ class AuthEndpoint:
             assert response.json()['errorMessage'] == "Неверные учетные данные"
         except AssertionError:
             logger.error(f'Сообщение об ошибке некорректное: {response.json()}')
+
         logger.info(f"Ответ на авторизацию получен. Статус: {response.status_code}")
         return response
