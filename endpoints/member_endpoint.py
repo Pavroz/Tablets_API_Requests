@@ -5,6 +5,9 @@ from config import config
 import random
 import string
 import allure
+import logging
+
+logger = logging.getLogger(__name__)
 
 class MemberEndpoint(AuthEndpoint):
 
@@ -32,13 +35,22 @@ class MemberEndpoint(AuthEndpoint):
             "county": subject,
             "profileId": id_profile
         }
+
+        logger.info('Создание участника')
+        logger.info(f'payload: {payload}')
         response = requests.post(url, json=payload, headers=self.headers)
+
+        logger.info(f'Создание участника завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Получение участника')
     def get_member(self, id_member: str) -> Response:
         url = f'{config.URL}/members/{id_member}'
+
+        logger.info(f'Получение участника по id: {id_member}')
         response = requests.get(url, headers=self.headers)
+
+        logger.info(f'Получение участника завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Изменение участника')
@@ -62,7 +74,12 @@ class MemberEndpoint(AuthEndpoint):
             'county': subject,
             'profileId': id_profile
         }
+
+        logger.info(f'Изменение участника по id: {id_member}')
+        logger.info(f'payload: {payload}')
         response = requests.put(url, json=payload, headers=self.headers)
+
+        logger.info(f'Изменение участника завершено. Статус: {response.status_code}')
         return response
 
 
