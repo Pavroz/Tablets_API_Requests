@@ -31,3 +31,4 @@ def setup_logger() -> None:
             logging.StreamHandler(sys.stdout), # и одновременно в консоль
         ],
     )
+logger = logging.getLogger(__name__)

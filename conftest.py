@@ -5,9 +5,9 @@ from config import config
 from endpoints.auth_endpoint import AuthEndpoint
 from endpoints.member_endpoint import MemberEndpoint
 from endpoints.profiles_endpoint import ProfileEndpoint
-from utils.logger import setup_logger
+from tools.logger import setup_logger
 import logging
-from utils.validator import Validator
+from tools.validator import Validator
 
 # Поднимаем логгер для всего проекта
 setup_logger()

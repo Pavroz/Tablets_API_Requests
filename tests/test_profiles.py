@@ -1,9 +1,7 @@
 import pytest
 import allure
-import logging
-from utils.validator import Validator
+from tools.validator import Validator
 
-logger = logging.getLogger(__name__)
 
 @allure.feature('Страница профилей')
 class TestProfiles:

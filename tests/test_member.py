@@ -1,8 +1,9 @@
 import pytest
 import allure
 from constants import member_cases
-from utils.validator import Validator
+from tools.validator import Validator
 
+@allure.feature('Страница участников')
 class TestMember:
 
     validator = Validator()

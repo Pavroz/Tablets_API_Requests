@@ -6,8 +6,7 @@ import random
 import string
 import allure
 import logging
-
-logger = logging.getLogger(__name__)
+from tools.logger import logger
 
 class MemberEndpoint(AuthEndpoint):
 

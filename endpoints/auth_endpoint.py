@@ -3,9 +3,10 @@ from config import config
 from requests import Response
 import logging
 import allure
+from tools.logger import logger
 
 # Получение логгера для текущего модуля
-logger = logging.getLogger(__name__)
+
 
 class AuthEndpoint:
 

@@ -6,9 +6,9 @@ from config import config
 from requests import Response
 import logging
 import allure
-from utils.validator import Validator
+from tools.validator import Validator
+from tools.logger import logger
 
-logger = logging.getLogger(__name__)
 
 class ProfileEndpoint(AuthEndpoint):
 
