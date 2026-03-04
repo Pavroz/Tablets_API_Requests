@@ -36,9 +36,10 @@ class TestProfiles:
     @pytest.mark.profiles
     def test_delete_profile(self, profile_endpoint):
         id_profile = profile_endpoint.create_new_profile().json()['id']
-        profile_endpoint.delete_profile(id_profile)
-        response = profile_endpoint.get_profile_by_id(id_profile)
-        self.validator.assert_status_code(response, 404)
+        response = profile_endpoint.delete_profile(id_profile)
+        self.validator.assert_status_code(response, 204)
+        new_response = profile_endpoint.get_profile_by_id(id_profile)
+        self.validator.assert_status_code(new_response, 404)
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка получения всех профилей')

@@ -6,11 +6,13 @@ from config import config
 from requests import Response
 import logging
 import allure
-
+from utils.validator import Validator
 
 logger = logging.getLogger(__name__)
 
 class ProfileEndpoint(AuthEndpoint):
+
+    validator = Validator()
 
     def __init__(self, token: str):
         super().__init__(token)
@@ -31,6 +33,8 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'url: {url}')
 
         response = requests.get(url, headers=self.headers)
+
+        logger.info(f'Получение профиля завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Изменение профиля')
@@ -44,6 +48,8 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'url: {url}, payload: {payload}')
 
         response = requests.put(url, json=payload, headers=self.headers)
+
+        logger.info(f'Изменение профиля завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Удаление профиля')
@@ -53,7 +59,9 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'Удаление профиля по id: {id_for_delete}')
 
         response = requests.delete(url, headers=self.headers)
-        assert response.status_code == 204
+        self.validator.assert_status_code(response, 204)
+
+        logger.info(f'Удаление профиля завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Получение всех профилей')
@@ -63,6 +71,8 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info('Получение всех профилей')
 
         response = requests.get(url, headers=self.headers)
+
+        logger.info(f'Получение всех профилей завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Создание нового профиля')
@@ -90,6 +100,8 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'url: {url}, params: {params}')
 
         response = requests.post(url, params=params, headers=self.headers)
+
+        logger.info(f'Копирование профиля завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Получение активного профиля')
@@ -100,6 +112,8 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info('Получение активного профиля')
 
         response = requests.get(url, headers=self.headers)
+
+        logger.info(f'Получение активного профиля завершено. Статус: {response.status_code}')
         return response
 
     @allure.step('Активация профиля')
@@ -112,14 +126,18 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'url: {url}, params: {params}')
 
         response = requests.post(url, params=params, headers=self.headers)
+
+        logger.info(f'Активация профиля завершена. Статус: {response.status_code}')
         return response
 
-    @allure.step('Деактивация профиля')
+    @allure.step('Деактивация активного профиля')
     def deactivate_profile(self) -> Response:
-        """Деактивация профиля"""
+        """Деактивация активного профиля"""
         url = f'{config.URL}/profiles/active'
 
         logger.info('Деактивация активного профиля')
 
         response = requests.delete(url, headers=self.headers)
+
+        logger.info(f'Деактивация активного профиля завершена. Статус: {response.status_code}')
         return response

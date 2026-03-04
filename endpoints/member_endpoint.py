@@ -4,6 +4,7 @@ from requests import Response
 from config import config
 import random
 import string
+import allure
 
 class MemberEndpoint(AuthEndpoint):
 
@@ -14,6 +15,7 @@ class MemberEndpoint(AuthEndpoint):
     def _random_string():
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
+    @allure.step('Создание участника')
     def create_member(
             self,
             id_profile: str,
@@ -33,13 +35,13 @@ class MemberEndpoint(AuthEndpoint):
         response = requests.post(url, json=payload, headers=self.headers)
         return response
 
-
+    @allure.step('Получение участника')
     def get_member(self, id_member: str) -> Response:
         url = f'{config.URL}/members/{id_member}'
         response = requests.get(url, headers=self.headers)
         return response
 
-
+    @allure.step('Изменение участника')
     def put_member(
             self,
             id_profile: str,

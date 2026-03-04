@@ -24,7 +24,14 @@ class Validator:
     def assert_len(self, response):
         assert len(response) > 0
 
-
     @allure.step('Проверка равенства')
     def assert_equality(self, one_argument, two_argument):
         assert one_argument == two_argument
+
+    @allure.step('Проверка, что один аргумент входит в другой')
+    def assert_in(self, one_argument, two_argument):
+        assert one_argument in two_argument
+
+    @allure.step('Проверка является ли один аргумент вторым')
+    def assert_is(self, one_argument, two_argument):
+        assert one_argument is two_argument
