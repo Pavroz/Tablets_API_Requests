@@ -42,3 +42,27 @@ def get_auth_token():
     logger.info('Токен авторизации получен успешно')
     allure.attach(token, name="Auth Token", attachment_type=allure.attachment_type.TEXT)
     return token
+
+@pytest.fixture(autouse=True)
+def log_test_start_end(request):
+    """Фикстуру не нужно передавать в тесты, она работает автоматом"""
+    test_name = request.node.name
+
+    logger.info(f"===== STARTED TEST: {test_name} =====")
+
+    yield
+
+    # определяем результат
+    if hasattr(request.node, "rep_call") and request.node.rep_call.failed:
+        logger.error(f"===== FINISHED TEST: {test_name} — FAILED =====")
+    else:
+        logger.info(f"===== FINISHED TEST: {test_name} — PASSED =====")
+
+
+@pytest.hookimpl(hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+
+    if rep.when == "call":
+        setattr(item, "rep_call", rep)

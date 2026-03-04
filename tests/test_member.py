@@ -1,8 +1,11 @@
 import pytest
 import allure
 from constants import member_cases
+from utils.validator import Validator
 
 class TestMember:
+
+    validator = Validator()
 
     @allure.story('Позитивные сценарии')
     @allure.title('Проверка создания участника')

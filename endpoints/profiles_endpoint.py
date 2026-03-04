@@ -5,6 +5,7 @@ from endpoints.auth_endpoint import AuthEndpoint
 from config import config
 from requests import Response
 import logging
+import allure
 
 
 logger = logging.getLogger(__name__)
@@ -22,41 +23,49 @@ class ProfileEndpoint(AuthEndpoint):
     def _random_string(self):
         return ''.join(random.choices(string.ascii_lowercase, k=10))
 
+    @allure.step('Получение профиля')
     def get_profile_by_id(self, id_for_get: str) -> Response:
         url = f'{config.URL}/profiles/{id_for_get}'
+
+        logger.info(f'Получение профиля по id: {id_for_get}')
+        logger.info(f'url: {url}')
+
         response = requests.get(url, headers=self.headers)
-        # assert response.status_code == 200
-        # assert isinstance(response.json(), dict)
-        # print('Профиль получен успешно')
         return response
 
+    @allure.step('Изменение профиля')
     def put_profile_by_id(self, id_for_put: str) -> Response:
         name = self._generate_profile_name()
         description = self._random_string()
         url = f'{config.URL}/profiles/{id_for_put}'
         payload = {'name': name, 'description': description}
+
+        logger.info(f'Изменение профиля по id: {id_for_put}')
+        logger.info(f'url: {url}, payload: {payload}')
+
         response = requests.put(url, json=payload, headers=self.headers)
-        # assert response.status_code == 201
-        # assert isinstance(response.json(), dict)
-        # print('Профиль изменен успешно')
-        # return response.json()['id']
         return response
 
+    @allure.step('Удаление профиля')
     def delete_profile(self, id_for_delete: str) -> Response:
         url = f'{config.URL}/profiles/{id_for_delete}'
+
+        logger.info(f'Удаление профиля по id: {id_for_delete}')
+
         response = requests.delete(url, headers=self.headers)
         assert response.status_code == 204
-        # print('Профиль удалился успешно')
         return response
 
+    @allure.step('Получение всех профилей')
     def get_all_profiles(self) -> Response:
         url = f'{config.URL}/profiles'
+
+        logger.info('Получение всех профилей')
+
         response = requests.get(url, headers=self.headers)
-        # assert response.status_code == 200
-        # assert isinstance(response.json(), list)
-        # print('\nСписок профилей получен успешно')
         return response
 
+    @allure.step('Создание нового профиля')
     def create_new_profile(self) -> Response:
         name = self._generate_profile_name()
         description = self._random_string()
@@ -71,31 +80,46 @@ class ProfileEndpoint(AuthEndpoint):
         logger.info(f'Создание профиля завершено. Статус: {response.status_code}')
         return response
 
+    @allure.step('Копирование профиля')
     def copy_profile(self, id_for_copy: str) -> Response:
         new_name = self._generate_profile_name()
         url = f'{config.URL}/profiles/{id_for_copy}/copy'
         params = {'name': new_name}
+
+        logger.info(f'Копирование профиля по id: {id_for_copy}')
+        logger.info(f'url: {url}, params: {params}')
+
         response = requests.post(url, params=params, headers=self.headers)
-        # assert response.status_code == 201
-        # assert isinstance(response.json(), dict)
-        # print('Профиль скопировался успешно')
         return response
 
+    @allure.step('Получение активного профиля')
     def get_active_profile(self) -> Response:
         """Получение активного профиля"""
         url = f'{config.URL}/profiles/active'
+
+        logger.info('Получение активного профиля')
+
         response = requests.get(url, headers=self.headers)
         return response
 
+    @allure.step('Активация профиля')
     def activate_profile(self, id_for_set: str) -> Response:
         """Активация профиля"""
         url = f'{config.URL}/profiles/active'
         params = {'id': id_for_set}
+
+        logger.info(f'Активация профиля по id: {id_for_set}')
+        logger.info(f'url: {url}, params: {params}')
+
         response = requests.post(url, params=params, headers=self.headers)
         return response
 
+    @allure.step('Деактивация профиля')
     def deactivate_profile(self) -> Response:
         """Деактивация профиля"""
         url = f'{config.URL}/profiles/active'
+
+        logger.info('Деактивация активного профиля')
+
         response = requests.delete(url, headers=self.headers)
         return response
