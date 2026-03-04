@@ -1,22 +1,17 @@
-2026-03-04 18:08:44,551 | INFO | conftest | Токен авторизации получен успешно
-2026-03-04 18:08:44,552 | INFO | conftest | STARTED TEST: test_get_profile_by_id
-2026-03-04 18:08:44,553 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_ykcq2icfpj9wni7
-2026-03-04 18:08:44,553 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_ykcq2icfpj9wni7', 'description': 'incrasntev'}
-2026-03-04 18:08:44,839 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
-2026-03-04 18:08:44,840 | INFO | endpoints.profiles_endpoint | Получение профиля по id: 4684
-2026-03-04 18:08:44,840 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles/4684
-2026-03-04 18:08:45,128 | INFO | endpoints.profiles_endpoint | Удаление профиля по id: 4684
-2026-03-04 18:08:45,408 | INFO | conftest | FINISHED TEST: test_get_profile_by_id — PASSED
-2026-03-04 18:10:44,667 | INFO | conftest | Токен авторизации получен успешно
-2026-03-04 18:10:44,668 | INFO | conftest | === STARTED TEST: test_put_profile_by_id ===
-2026-03-04 18:10:44,669 | INFO | endpoints.profiles_endpoint | Создание нового профиля: test_h9skwcckuc4if99
-2026-03-04 18:10:44,670 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles, payload: {'name': 'test_h9skwcckuc4if99', 'description': 'nrmrpgjary'}
-2026-03-04 18:10:44,958 | INFO | endpoints.profiles_endpoint | Создание профиля завершено. Статус: 201
-2026-03-04 18:10:44,958 | INFO | endpoints.profiles_endpoint | Изменение профиля по id: 4685
-2026-03-04 18:10:44,958 | INFO | endpoints.profiles_endpoint | url: http://172.16.3.87:7070/api/profiles/4685, payload: {'name': 'test_ib1c4rxetv38431', 'description': 'unbjyyypex'}
-2026-03-04 18:10:45,250 | INFO | endpoints.profiles_endpoint | Удаление профиля по id: 4685
-2026-03-04 18:10:45,531 | INFO | conftest | === FINISHED TEST: test_put_profile_by_id — PASSED ===
-2026-03-04 18:11:08,096 | INFO | conftest | Токен авторизации получен успешно
-2026-03-04 18:11:08,097 | INFO | conftest | ===== STARTED TEST: test_get_all_profiles =====
-2026-03-04 18:11:08,098 | INFO | endpoints.profiles_endpoint | Получение всех профилей
-2026-03-04 18:11:08,426 | INFO | conftest | ===== FINISHED TEST: test_get_all_profiles — PASSED =====
+2026-03-04 21:46:29,730 | INFO | conftest | ===== STARTED TEST: test_auth_correct =====
+2026-03-04 21:46:29,731 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:46:29,731 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:46:29,732 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
+2026-03-04 21:46:30,260 | ERROR | conftest | ===== FINISHED TEST: test_auth_correct — FAILED =====
+2026-03-04 21:46:52,127 | INFO | conftest | ===== STARTED TEST: test_auth_empty_login_and_password =====
+2026-03-04 21:46:52,128 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:46:52,128 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:46:52,129 | INFO | endpoints.auth_endpoint | Payload: {'login': ' ', 'password': ' '}
+2026-03-04 21:46:52,420 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 400
+2026-03-04 21:46:52,422 | INFO | conftest | ===== FINISHED TEST: test_auth_empty_login_and_password — PASSED =====
+2026-03-04 21:46:56,412 | INFO | conftest | ===== STARTED TEST: test_auth_correct =====
+2026-03-04 21:46:56,413 | INFO | endpoints.auth_endpoint | Начало запроса авторизации
+2026-03-04 21:46:56,414 | INFO | endpoints.auth_endpoint | URL: http://172.16.3.87:7070/api/common/auth
+2026-03-04 21:46:56,414 | INFO | endpoints.auth_endpoint | Payload: {'login': '0', 'password': '321'}
+2026-03-04 21:46:56,786 | INFO | endpoints.auth_endpoint | Ответ на авторизацию получен. Статус: 200
+2026-03-04 21:46:56,787 | INFO | conftest | ===== FINISHED TEST: test_auth_correct — PASSED =====

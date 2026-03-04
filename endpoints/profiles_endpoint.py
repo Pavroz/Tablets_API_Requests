@@ -7,8 +7,8 @@ from requests import Response
 import logging
 import allure
 from tools.validator import Validator
-from tools.logger import logger
 
+logger = logging.getLogger(__name__)
 
 class ProfileEndpoint(AuthEndpoint):
 
